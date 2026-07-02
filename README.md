@@ -1,7 +1,10 @@
 # Redrob AI Hiring Intelligence Platform
 
 > **AI-Powered Intelligent Candidate Discovery System (ICDS)**
->
+##  dataset link access from here 
+
+https://drive.google.com/drive/folders/11zf1uhjD0dqjIXN7UTR0cxDdXSWyJ3Si?usp=sharing
+
 > A production-grade candidate ranking engine that understands job descriptions
 > semantically, not just through keyword matching.
 
