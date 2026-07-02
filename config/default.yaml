@@ -1,0 +1,149 @@
+# Redrob AI Hiring Intelligence Platform - Default Configuration
+
+# ---------------------------------------------------------------------------
+# Core Settings
+# ---------------------------------------------------------------------------
+reference_date: "2026-06-01"
+
+# ---------------------------------------------------------------------------
+# Embedding Configuration
+# ---------------------------------------------------------------------------
+embedding:
+  model: "BAAI/bge-small-en-v1.5"
+  dimension: 384
+  batch_size: 256
+  career_entries: 3
+  career_chars: 300
+
+# ---------------------------------------------------------------------------
+# Score Composition Weights
+# ---------------------------------------------------------------------------
+scoring:
+  semantic_weight: 0.40
+  structural_weight: 0.60
+
+  structural_sub_weights:
+    title_domain: 0.30
+    career_evidence: 0.30
+    experience_band: 0.15
+    skills_trust: 0.15
+    education_tier: 0.05
+    logistics: 0.05
+
+# ---------------------------------------------------------------------------
+# Penalty Configuration
+# ---------------------------------------------------------------------------
+penalties:
+  consulting_only: 0.25
+  research_only: 0.30
+  title_chaser: 0.60
+  cv_only: 0.50
+  stale_hands_on: 0.65
+  keyword_stuffer: 0.05
+  research_title_no_prod: 0.75
+  langchain_only: 0.35
+
+  thresholds:
+    research_prod_min_hits: 2
+    title_chaser_min_roles: 3
+    title_chaser_max_avg_tenure_months: 20
+    stale_hands_on_months: 18
+    keyword_stuffer_min_jd_skills: 4
+
+# ---------------------------------------------------------------------------
+# Experience Band
+# ---------------------------------------------------------------------------
+experience:
+  ideal_lo: 5.0
+  ideal_hi: 9.0
+  soft_lo: 4.0
+  soft_hi: 11.0
+  hard_floor: 3.0
+
+# ---------------------------------------------------------------------------
+# Behavioral Signals
+# ---------------------------------------------------------------------------
+behavioral:
+  floor: 0.30
+  ceiling: 1.15
+  decay_lambda: 0.0077  # 90-day half-life
+
+  recruiter_save_max: 5
+  recruiter_save_bonus: 0.01
+  profile_views_threshold: 10
+  profile_views_bonus: 0.01
+  app_submitted_bonus: 0.02
+
+# ---------------------------------------------------------------------------
+# Integrity / Honeypot
+# ---------------------------------------------------------------------------
+integrity:
+  fatal_multiplier: 0.02
+  hard_multiplier: 0.10
+  soft_decay: 0.90
+
+  yoe_span_slack_years: 2.0
+  duration_mismatch_months: 6
+  expert_zero_duration_min: 3
+
+  contradiction_delta_threshold: 0.45
+  contradiction_penalty: 0.20
+
+# ---------------------------------------------------------------------------
+# Logistics
+# ---------------------------------------------------------------------------
+logistics:
+  preferred_locations:
+    - "pune"
+    - "noida"
+  welcome_locations:
+    - "hyderabad"
+    - "mumbai"
+    - "delhi"
+    - "gurgaon"
+    - "gurugram"
+    - "ghaziabad"
+    - "faridabad"
+    - "new delhi"
+  india_relocate_score: 0.75
+  india_no_relocate_score: 0.55
+  abroad_score: 0.20
+
+  notice_steps:
+    - [30, 1.00]
+    - [60, 0.85]
+    - [90, 0.70]
+  notice_long_score: 0.55
+
+# ---------------------------------------------------------------------------
+# Tier-1 Companies
+# ---------------------------------------------------------------------------
+tier1_companies:
+  - "google"
+  - "meta"
+  - "microsoft"
+  - "apple"
+  - "amazon"
+  - "netflix"
+  - "openai"
+  - "deepmind"
+  - "anthropic"
+  - "uber"
+  - "airbnb"
+  - "stripe"
+  - "nvidia"
+  - "zomato"
+  - "swiggy"
+  - "paytm"
+  - "phonepe"
+  - "razorpay"
+  - "cred"
+  - "meesho"
+  - "flipkart"
+  - "freshworks"
+  - "postman"
+  - "hasura"
+  - "zerodha"
+  - "groww"
+
+  tier1_bonus: 0.08
